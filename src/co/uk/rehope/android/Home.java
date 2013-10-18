@@ -48,7 +48,7 @@ public class Home extends Activity implements LocationListener {
 	
 	//Set to your WordPress blog's xml-rpc url
 	//e.g. private String blogURL = "appblog.com/xmlrpc.php";
-	private String blogURL = "http://test.com";
+	private String blogURL = "http://apps.rehope.co.uk/blog/xmlrpc.php";
 	
 	//GPS coordinates of church location
 	private double latitude = 55.872443;

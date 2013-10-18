@@ -10,14 +10,22 @@
     <RadioGroup android:layout_width="fill_parent"
       android:layout_height="54dip" android:orientation="horizontal"
       android:checkedButton="@+id/first" android:id="@+id/states" android:background="@drawable/tab_bg" android:paddingTop="2dip" android:paddingRight="2dip" android:paddingBottom="6dip" android:paddingLeft="2dip">
-      <RadioButton android:id="@+id/first" 
-        android:width="81dip" android:height="45dip" />
-      <RadioButton android:id="@+id/second" 
-        android:width="79dip" android:height="745dip" />
-      <RadioButton android:id="@+id/third" 
-        android:width="82dip" android:height="45dip" />
-      <RadioButton android:id="@+id/fourth" 
-        android:width="78dip" android:height="45dip" />
+      <RadioButton android:id="@+id/first" android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:layout_weight="1"
+		  android:layout_marginLeft="6dp" />
+      <RadioButton android:id="@+id/second" android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:layout_weight="1"
+		  android:layout_marginLeft="8dp" />
+      <RadioButton android:id="@+id/third" android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:layout_weight="1"
+		  android:layout_marginLeft="10dp" />
+      <RadioButton android:id="@+id/fourth" android:layout_width="wrap_content"
+		  android:layout_height="wrap_content"
+		  android:layout_weight="1"
+		  android:layout_marginLeft="10dp" />
     </RadioGroup>
     <TabWidget android:id="@android:id/tabs"
       android:layout_width="fill_parent" android:layout_height="wrap_content"

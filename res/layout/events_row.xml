@@ -1,6 +1,6 @@
 <RelativeLayout android:id="@+id/row_post_root" xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="297dip"
-	android:layout_height="55dip"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
 	android:orientation="vertical"
 	android:background="@drawable/events_row_bg"
 	>
@@ -19,7 +19,6 @@
 				android:paddingTop="4dip"
 				android:textSize="16dip"
 				android:textStyle="bold"
-				android:text="TEST"
 				android:maxLines="1"
 				android:ellipsize="marquee"
 				android:layout_marginTop="10dip"
@@ -29,10 +28,10 @@
 				android:layout_height="wrap_content"
 				android:textColor="#FFFFFF"
 				android:textSize="18dip"
-				android:text="YO"
 				android:layout_marginTop="6dip"
 				android:textStyle="bold"
-				android:layout_marginLeft="260dip"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="20dp"
 			/>
 			<TextView android:id="@+id/month"
 				android:layout_width="wrap_content"
@@ -40,8 +39,8 @@
 				android:textColor="#FFFFFF"
 				android:textSize="12dip"
 				android:layout_marginTop="-5dip"
-				android:text="YO"
 				android:layout_below="@id/day"
-				android:layout_marginLeft="259dip"
+				android:layout_alignParentRight="true"
+				android:layout_marginRight="21dp"
 			/>
 </RelativeLayout>

@@ -40,7 +40,7 @@ public class rehope extends TabActivity implements TabHost.TabContentFactory {
 				.setContent(tab2));
 		tabHost.addTab(tabHost.newTabSpec("messages").setIndicator("Messages")
 				.setContent(tab3));
-		tabHost.addTab(tabHost.newTabSpec("city").setIndicator("The City")
+		tabHost.addTab(tabHost.newTabSpec("fb").setIndicator("Facebook")
 				.setContent(tab4));
 
 		setupUI();
@@ -61,8 +61,8 @@ public class rehope extends TabActivity implements TabHost.TabContentFactory {
 			tv.setText("Events");
 		} else if (tag.equals("messages")) {
 			tv.setText("Messages");
-		} else if (tag.equals("city")) {
-			tv.setText("The City");
+		} else if (tag.equals("fb")) {
+			tv.setText("Facebook");
 		}
 		return tv;
 	}
@@ -75,7 +75,7 @@ public class rehope extends TabActivity implements TabHost.TabContentFactory {
 		rbFirst.setButtonDrawable(R.drawable.home);
 		rbSecond.setButtonDrawable(R.drawable.events);
 		rbThird.setButtonDrawable(R.drawable.messages);
-		rbFourth.setButtonDrawable(R.drawable.city);
+		rbFourth.setButtonDrawable(R.drawable.fb);
 		RadioGroup rg = (RadioGroup) findViewById(R.id.states);
 		rbFirst.setButtonDrawable(getResources().getDrawable(
 				R.drawable.home_active));
@@ -91,7 +91,7 @@ public class rehope extends TabActivity implements TabHost.TabContentFactory {
 					rbThird.setButtonDrawable(getResources().getDrawable(
 							R.drawable.messages));
 					rbFourth.setButtonDrawable(getResources().getDrawable(
-							R.drawable.city));
+							R.drawable.fb));
 					break;
 				case R.id.second:
 					getTabHost().setCurrentTab(1);
@@ -102,7 +102,7 @@ public class rehope extends TabActivity implements TabHost.TabContentFactory {
 					rbThird.setButtonDrawable(getResources().getDrawable(
 							R.drawable.messages));
 					rbFourth.setButtonDrawable(getResources().getDrawable(
-							R.drawable.city));
+							R.drawable.fb));
 					break;
 				case R.id.third:
 					getTabHost().setCurrentTab(2);
@@ -113,12 +113,12 @@ public class rehope extends TabActivity implements TabHost.TabContentFactory {
 					rbSecond.setButtonDrawable(getResources().getDrawable(
 							R.drawable.events));
 					rbFourth.setButtonDrawable(getResources().getDrawable(
-							R.drawable.city));
+							R.drawable.fb));
 					break;
 				case R.id.fourth:
 					getTabHost().setCurrentTab(3);
 					rbFourth.setButtonDrawable(getResources().getDrawable(
-							R.drawable.city_active));
+							R.drawable.fb_down));
 					rbFirst.setButtonDrawable(getResources().getDrawable(
 							R.drawable.home));
 					rbSecond.setButtonDrawable(getResources().getDrawable(
