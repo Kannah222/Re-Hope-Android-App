@@ -2,8 +2,6 @@ package co.uk.rehope.android;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Window;
 import android.webkit.WebSettings;
@@ -37,48 +35,25 @@ public class TheCity extends Activity {
     }
 
     private void loadTheCity() {
-        ParentActivity = (rehope) TheCity.this.getParent();
+    	 WebView wv = (WebView) findViewById(R.id.thecity_webview);
+         wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+         wv.getSettings().setBuiltInZoomControls(true);
+         wv.getSettings().setJavaScriptEnabled(true);
+         String theCityURL;
 
-		/*
-		 * wv.setWebChromeClient(new WebChromeClient() { public void
-		 * onProgressChanged(WebView view, int progress) {
-		 * rehope.this.setTitle("Loading..."); setProgress(progress * 100);
-		 * 
-		 * if(progress == 100){ setTitle("The City");
-		 * 
-		 * } } });
-		 */
-		
-		/* try to open the facebook page via the fb app */
-        try {
-            this.getPackageManager().getPackageInfo("com.facebook.katana", 0);
-            ParentActivity.launchActivity((new Intent(Intent.ACTION_VIEW, Uri.parse("fb://group/118283294939251"))));
-        }
-		/* if the fb app isn't installed, open a web-view instead*/ catch (Exception e) {
-            loadWebView();
-        }
+         wv.setWebViewClient(new ReHopeWebViewClient());
 
-
+         try {
+         	theCityURL = ParentActivity.cityURL;
+         } catch (java.lang.NullPointerException n) {
+             theCityURL = "";
+         }
+         
+         if (theCityURL.equals(""))
+     		theCityURL = "https://m.facebook.com/#!/groups/118283294939251";
+         
+         wv.loadUrl(theCityURL);
     }
-
-    /* loads a webview for theCityURL */
-    private void loadWebView() {
-        WebView wv = (WebView) findViewById(R.id.thecity_webview);
-        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-        wv.getSettings().setBuiltInZoomControls(true);
-        wv.getSettings().setJavaScriptEnabled(true);
-        String theCityURL = ParentActivity.cityURL;
-
-        wv.setWebViewClient(new ReHopeWebViewClient());
-
-        if (theCityURL != "") {
-            wv.loadUrl(theCityURL);
-            theCityURL = "";
-        } else {
-            wv.loadUrl("https://m.facebook.com/#!/groups/118283294939251");
-        }
-    }
-
 
     private class ReHopeWebViewClient extends WebViewClient {
         @Override
@@ -89,13 +64,9 @@ public class TheCity extends Activity {
 
         @Override
         public void onPageFinished(WebView view, String url) {
-            // setProgressBarIndeterminateVisibility(false);
             view.clearCache(true);
         }
-		/*
-		 * public void onReceivedSslError(WebView view, SslErrorHandler handler,
-		 * SslError error){ handler.proceed(); }
-		 */
+
 
     }
 
