@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.5.+'
+        classpath 'com.android.tools.build:gradle:0.8.+'
     }
 }
 apply plugin: 'android'
@@ -13,14 +13,14 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 18
-    buildToolsVersion "18.1.1"
+    compileSdkVersion 19
+    buildToolsVersion "19.0.1"
 
     defaultConfig {
-        versionName project.version
-        versionCode 5
+        versionName "1.2"
+        versionCode 6
         minSdkVersion 9
-        targetSdkVersion 18
+        targetSdkVersion 19
     }
 
     sourceSets {
@@ -46,4 +46,19 @@ android {
         debug.setRoot('build-types/debug')
         release.setRoot('build-types/release')
     }
+}
+
+//For app signing
+if (["storeFile", "storePassword", "keyAlias", "keyPassword"].count { !project.hasProperty(it) } == 0) {
+    android {
+        signingConfigs {
+            release {
+                storeFile = file(project.storeFile)
+                storePassword = project.storePassword
+                keyAlias = project.keyAlias
+                keyPassword = project.keyPassword
+            }
+        }
+    }
+    android.buildTypes.release.signingConfig = android.signingConfigs.release
 }

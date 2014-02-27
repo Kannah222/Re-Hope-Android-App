@@ -1,4 +1,4 @@
-package co.uk.rehope.android;
+package co.uk.rehope.androidapp;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -33,7 +33,7 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import co.uk.rehope.android.ReHopeGallery;
+
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;

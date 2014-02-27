@@ -1,4 +1,4 @@
-package co.uk.rehope.android;
+package co.uk.rehope.androidapp;
 
 /*
  Licensed to the Apache Software Foundation (ASF) under one

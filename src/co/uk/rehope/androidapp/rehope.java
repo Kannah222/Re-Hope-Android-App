@@ -1,24 +1,16 @@
-package co.uk.rehope.android;
+package co.uk.rehope.androidapp;
 
-import java.io.IOException;
-
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.TabActivity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class rehope extends TabActivity implements TabHost.TabContentFactory {
 	/** Called when the activity is first created. */

@@ -1,4 +1,4 @@
-package co.uk.rehope.android;
+package co.uk.rehope.androidapp;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -6,7 +6,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Vector;
 
-import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;

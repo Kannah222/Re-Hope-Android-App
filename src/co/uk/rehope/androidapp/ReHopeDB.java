@@ -1,4 +1,4 @@
-package co.uk.rehope.android;
+package co.uk.rehope.androidapp;
 
 import java.util.HashMap;
 import java.util.Vector;

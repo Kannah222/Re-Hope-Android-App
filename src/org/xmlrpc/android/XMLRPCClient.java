@@ -1,35 +1,30 @@
 package org.xmlrpc.android;
 
+import android.os.Environment;
+import android.util.Log;
+import android.util.Xml;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.FileEntity;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.CoreConnectionPNames;
+import org.apache.http.params.HttpParams;
+import org.apache.http.params.HttpProtocolParams;
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
+import org.xmlpull.v1.XmlSerializer;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.PushbackInputStream;
 import java.io.StringWriter;
 import java.net.URI;
 import java.net.URL;
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.UnrecoverableKeyException;
 import java.util.Map;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.auth.UsernamePasswordCredentials;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.FileEntity;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.params.CoreConnectionPNames;
-import org.apache.http.params.HttpParams;
-import org.apache.http.params.HttpProtocolParams;
-import co.uk.rehope.android.ConnectionClient;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserFactory;
-import org.xmlpull.v1.XmlSerializer;
-
-import android.os.Environment;
-import android.util.Log;
-import android.util.Xml;
 
 public class XMLRPCClient {
 	private static final String TAG_METHOD_CALL = "methodCall";
@@ -41,15 +36,14 @@ public class XMLRPCClient {
 	private static final String TAG_FAULT_CODE = "faultCode";
 	private static final String TAG_FAULT_STRING = "faultString";
 
-	private ConnectionClient client;
+	private DefaultHttpClient client;
 	private HttpPost postMethod;
 	private XmlSerializer serializer;
 	private HttpParams httpParams;
 
 	/**
 	 * XMLRPCClient constructor. Creates new instance based on server URI
-	 * 
-	 * @param XMLRPC
+	 *
 	 *            server URI
 	 */
 	public XMLRPCClient(URI uri) {
@@ -63,43 +57,7 @@ public class XMLRPCClient {
 		httpParams = postMethod.getParams();
 		HttpProtocolParams.setUseExpectContinue(httpParams, false);
 
-		// username & password not needed
-		UsernamePasswordCredentials creds = new UsernamePasswordCredentials("",
-				"");
-
-		// this gets connections working over https
-		if (uri.getScheme() != null) {
-			if (uri.getScheme().equals("https")) {
-				if (uri.getPort() == -1)
-					try {
-						client = new ConnectionClient(creds, 443);
-					} catch (KeyManagementException e) {
-						client = new ConnectionClient(creds);
-					} catch (NoSuchAlgorithmException e) {
-						client = new ConnectionClient(creds);
-					} catch (KeyStoreException e) {
-						client = new ConnectionClient(creds);
-					} catch (UnrecoverableKeyException e) {
-						client = new ConnectionClient(creds);
-					}
-				else
-					try {
-						client = new ConnectionClient(creds, uri.getPort());
-					} catch (KeyManagementException e) {
-						client = new ConnectionClient(creds);
-					} catch (NoSuchAlgorithmException e) {
-						client = new ConnectionClient(creds);
-					} catch (KeyStoreException e) {
-						client = new ConnectionClient(creds);
-					} catch (UnrecoverableKeyException e) {
-						client = new ConnectionClient(creds);
-					}
-			} else {
-				client = new ConnectionClient(creds);
-			}
-		} else {
-			client = new ConnectionClient(creds);
-		}
+		client = new DefaultHttpClient();
 
 		serializer = Xml.newSerializer();
 	}
@@ -107,8 +65,7 @@ public class XMLRPCClient {
 	/**
 	 * Convenience constructor. Creates new instance based on server String
 	 * address
-	 * 
-	 * @param XMLRPC
+	 *
 	 *            server address
 	 */
 	public XMLRPCClient(String url) {
@@ -118,8 +75,7 @@ public class XMLRPCClient {
 	/**
 	 * Convenience XMLRPCClient constructor. Creates new instance based on
 	 * server URL
-	 * 
-	 * @param XMLRPC
+	 *
 	 *            server URL
 	 */
 	public XMLRPCClient(URL url) {
