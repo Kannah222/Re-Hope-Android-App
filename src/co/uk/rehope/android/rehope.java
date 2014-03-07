@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,10 +24,14 @@ import android.widget.Toast;
 public class rehope extends TabActivity implements TabHost.TabContentFactory {
 	/** Called when the activity is first created. */
 	public String cityURL = "";
+	public Typeface typeface;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		typeface = Typeface.createFromAsset(getAssets(), "fonts/ProximaNovaAlt-Light.ttf");
+		
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
 		TabHost tabHost = getTabHost();
@@ -53,6 +58,7 @@ public class rehope extends TabActivity implements TabHost.TabContentFactory {
 
 	public View createTabContent(String tag) {
 		TextView tv = new TextView(this);
+		tv.setTypeface(typeface);
 		tv.setTextColor(Color.BLACK);
 		tv.setTextSize(20);
 		if (tag.equals("home")) {

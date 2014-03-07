@@ -16,6 +16,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -83,6 +84,8 @@ public class Home extends Activity implements LocationListener {
 	ProgressBar pb;
 	DrawableManager dm;
 	boolean largeScreen = false;
+	
+	private Typeface tf;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +94,8 @@ public class Home extends Activity implements LocationListener {
 		getFeaturedImages(false);
 		String test = "hi";
 
+		tf = Typeface.createFromAsset(getAssets(), "fonts/ProximaNovaAlt-Reg.ttf");
+		
 		Display display = getWindowManager().getDefaultDisplay();
 		int width = display.getWidth();
 		int height = display.getHeight();
@@ -143,16 +148,20 @@ public class Home extends Activity implements LocationListener {
 							dm.fetchDrawableOnThread(largeEventImageURL,
 									lrgImage);
 							TextView event_title = (TextView) findViewById(R.id.events_home_event_title);
+							event_title.setTypeface(tf);
 							largeEventTitle = contentHash.get("title")
 									.toString();
 							event_title.setText(largeEventTitle);
 							TextView event_content = (TextView) findViewById(R.id.events_home_event_content);
+							event_content.setTypeface(tf);
 							largeEventContent = (contentHash.get("content")
 									.toString());
 							event_content.setText(largeEventContent);
 							TextView event_day = (TextView) findViewById(R.id.events_home_date_digits);
+							event_day.setTypeface(tf);
 							event_day.setText(dayName);
 							TextView event_month = (TextView) findViewById(R.id.events_home_date_month_name);
+							event_month.setTypeface(tf);
 							event_month.setText(monthName);
 							largeEventDate = (contentHash.get("date")
 									.toString());
@@ -173,10 +182,13 @@ public class Home extends Activity implements LocationListener {
 							dm.fetchDrawableOnThread(smallEventImageURL,
 									lrgImage);
 							TextView small_event_title = (TextView) findViewById(R.id.events_home_small_event_title);
+							small_event_title.setTypeface(tf);
 							small_event_title.setText(smallEventTitle);
 							TextView small_event_day = (TextView) findViewById(R.id.events_home_small_date_digits);
+							small_event_day.setTypeface(tf);
 							small_event_day.setText(dayName);
 							TextView small_event_month = (TextView) findViewById(R.id.events_home_small_date_month_name);
+							small_event_month.setTypeface(tf);
 							small_event_month.setText(monthName);
 						}
 					} catch (ParseException e) {
@@ -499,8 +511,11 @@ public class Home extends Activity implements LocationListener {
 
 	public void timerTime() {
 		final TextView hoursDigit = (TextView) findViewById(R.id.home_footer_hours_digit);
+		hoursDigit.setTypeface(tf);
 		final TextView minutesDigit = (TextView) findViewById(R.id.home_footer_minutes_digit);
+		minutesDigit.setTypeface(tf);
 		final TextView secondsDigit = (TextView) findViewById(R.id.home_footer_seconds_digit);
+		secondsDigit.setTypeface(tf);
 
 		ReHopeGallery gallery = (ReHopeGallery) findViewById(R.id.gallery);
 		gallery.setAdapter(new ImageAdapter(Home.this));
@@ -651,6 +666,7 @@ public class Home extends Activity implements LocationListener {
 			int distance = (int) location.distanceTo(churchLocation);
 
 			TextView tvDistance = (TextView) findViewById(R.id.home_footer_loc_label);
+			tvDistance.setTypeface(tf);
 			tvDistance.setText("You are ~" + distance + "m from Re:Hope");
 			if (location.equals("gps")) {
 				locationManager.removeUpdates(Home.this);

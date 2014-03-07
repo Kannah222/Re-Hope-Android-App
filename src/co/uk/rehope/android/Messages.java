@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,7 @@ public class Messages extends ListActivity {
 	private String[] messageMp3URLs;
 	private messageListAdapter ela;
 	private DrawableManager dm;
+	private Typeface tf;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -158,14 +160,17 @@ public class Messages extends ListActivity {
 		TextView day = null;
 		TextView month = null;
 		ImageView image = null;
+		Typeface tf;
 
 		ViewWrapper(View base) {
 			this.base = base;
+			tf = Typeface.createFromAsset(getAssets(), "fonts/ProximaNovaAlt-Reg.ttf");
 		}
 
 		TextView getTitle() {
 			if (title == null) {
 				title = (TextView) base.findViewById(R.id.title);
+				title.setTypeface(tf);
 			}
 			return (title);
 		}
@@ -173,6 +178,7 @@ public class Messages extends ListActivity {
 		TextView getDay() {
 			if (day == null) {
 				day = (TextView) base.findViewById(R.id.day);
+				day.setTypeface(tf);
 			}
 			return (day);
 		}
@@ -180,6 +186,7 @@ public class Messages extends ListActivity {
 		TextView getMonth() {
 			if (month == null) {
 				month = (TextView) base.findViewById(R.id.month);
+				month.setTypeface(tf);
 			}
 			return (month);
 		}
