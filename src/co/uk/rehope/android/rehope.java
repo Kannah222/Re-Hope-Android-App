@@ -30,7 +30,7 @@ public class rehope extends TabActivity implements TabHost.TabContentFactory {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		typeface = Typeface.createFromAsset(getAssets(), "fonts/ProximaNovaAlt-Light.ttf");
+		typeface = Typeface.createFromAsset(getAssets(), "fonts/ProximaNovaAlt-Reg.ttf");
 		
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main);
