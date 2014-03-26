@@ -70,7 +70,10 @@ public class EventDetail extends Activity {
 		ImageView header = (ImageView) findViewById(R.id.header);
 		dm.fetchDrawableOnThread(eventImageURL, header);
 
+		
 		Button cityButton = (Button) findViewById(R.id.city_button);
+		cityButton.setVisibility(View.GONE);
+		/*// not currently using the city
 		cityButton.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
 
@@ -82,7 +85,7 @@ public class EventDetail extends Activity {
 				finish();
 
 			}
-		});
+		}); */
 
 	}
 
