@@ -16,10 +16,8 @@
 <RelativeLayout android:id="@+id/events_large" android:layout_width="fill_parent" android:layout_height="wrap_content" 
     android:background="@drawable/home_events_bg_large" android:visibility="invisible" android:layout_below="@id/gallery"
     android:layout_marginTop="16dp">
-    	<ImageView android:id="@+id/events_square_image" android:layout_width="94dp" android:layout_height="94dp" 
-    	android:layout_above="@id/events_large" android:layout_marginTop="6dp" android:layout_marginLeft="10dp" android:src="@drawable/home_news_square" />
-    	<ImageView android:id="@+id/events_square_highlight" android:layout_above="@id/events_large" 
-    	android:layout_width="94dp" android:layout_height="94dp" android:src="@drawable/home_news_square_highlight"  android:layout_marginTop="6dp" android:layout_marginLeft="10dp" />
+    	<ImageView android:id="@+id/events_square_image" android:layout_width="106dp" android:layout_height="106dp" 
+    	android:layout_above="@id/events_large" android:layout_marginTop="0dp" android:layout_marginLeft="0dp" android:src="@drawable/home_news_square" />
 	    <ImageView android:id="@+id/upcoming" android:layout_width="68dip" android:layout_height="17dip" 
    	 	android:src="@drawable/upcoming" android:layout_above="@id/events_large" android:layout_marginLeft="113dp"
 	    android:layout_marginTop="10dp"/>
@@ -45,12 +43,9 @@
     <RelativeLayout android:id="@+id/events_small" android:visibility="invisible"
     android:layout_width="fill_parent" android:layout_height="55dp" android:background="@drawable/home_small_news_bg"
     android:layout_marginTop="16dp" android:layout_below="@id/events_large">
-	    <ImageView android:id="@+id/events_small_square_image" android:layout_width="47dp" android:layout_height="47dp" 
+	    <ImageView android:id="@+id/events_small_square_image" android:layout_width="55dp" android:layout_height="55dp" 
 	    android:layout_above="@id/events_small"
-	    android:layout_marginLeft="3dp" android:layout_marginTop="3dp" android:src="@drawable/home_news_square" />
-	    <ImageView android:id="@+id/events_small_square_highlight" android:layout_above="@id/events_small" 
-	    android:layout_width="47dp" android:layout_height="47dp" android:src="@drawable/home_news_square_highlight"
-	    android:layout_marginLeft="3dp" android:layout_marginTop="3dp" />
+	    android:layout_marginLeft="0dp" android:layout_marginTop="0dp" android:src="@drawable/home_news_square" />
 	    <TextView android:id="@+id/events_home_small_date_digits" android:layout_above="@id/events_small" android:layout_width="wrap_content" android:layout_height="wrap_content"
 	    android:textColor="#000000" android:layout_alignParentRight="true"
 		android:layout_marginRight="20dp"
@@ -71,40 +66,40 @@
     android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="@drawable/home_footer_bg"
     android:layout_marginTop="16dp">
     <TextView android:id="@+id/home_footer_next_service"
-	    android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp"
+	    android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="49dp"
 	    android:layout_marginTop="12dp"
-	    android:text="The next service begins in:" android:textColor="#000000"
+	    android:text="JOIN US AT OUR NEXT SERVICE" android:textColor="#000000"
 	    android:textSize="14dp" android:layout_marginBottom="-4dp"
 	    ></TextView>
 	<TextView android:id="@+id/home_footer_hours_digit"
-	    android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40dp"
+	    android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="66dp"
 	    android:layout_marginTop="0dp" android:layout_below="@id/home_footer_next_service"
-	    android:text="" android:textColor="#000000" android:textStyle="bold"
-	    android:textSize="30dp"
+	    android:text="" android:textColor="#5cafcb" android:textStyle="bold"
+	    android:textSize="16dp"
 	    ></TextView>
 	    <TextView android:id="@+id/home_footer_hours_label"
 	    android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_hours_digit" android:layout_alignBaseline="@id/home_footer_hours_digit"
-	    android:text="hrs" android:textColor="#000000" android:layout_marginLeft="2dp"
+	    android:text="hrs" android:textColor="#5cafcb" android:layout_marginLeft="2dp"
 	    android:textSize="16dp"
 	    ></TextView>
 	    <TextView android:id="@+id/home_footer_minutes_digit"
 	    android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_hours_label" android:layout_alignBaseline="@id/home_footer_hours_label"
-	    android:text="" android:textColor="#000000"
-	    android:textSize="30dp" android:layout_marginLeft="10dp" android:textStyle="bold"
+	    android:text="" android:textColor="#5cafcb"
+	    android:textSize="16dp" android:layout_marginLeft="10dp" android:textStyle="bold"
 	    ></TextView>
 	    <TextView android:id="@+id/home_footer_minutes_label"
 	    android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_minutes_digit" android:layout_alignBaseline="@id/home_footer_minutes_digit"
-	    android:text="mins" android:textColor="#000000" android:layout_marginLeft="2dp"
+	    android:text="mins" android:textColor="#5cafcb" android:layout_marginLeft="2dp"
 	    android:textSize="16dp"
 	    ></TextView>
 	    <TextView android:id="@+id/home_footer_seconds_digit"
 	    android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_minutes_label" android:layout_alignBaseline="@id/home_footer_minutes_label"
-	    android:text="" android:textColor="#000000" 
-	    android:textSize="30dp" android:layout_marginLeft="10dp" android:textStyle="bold"
+	    android:text="" android:textColor="#5cafcb" 
+	    android:textSize="16dp" android:layout_marginLeft="10dp" android:textStyle="bold"
 	    ></TextView>
 	    <TextView android:id="@+id/home_footer_seconds_label"
 	    android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_seconds_digit" android:layout_alignBaseline="@id/home_footer_seconds_digit"
-	    android:text="secs" android:textColor="#000000" android:layout_marginLeft="2dp"
+	    android:text="secs" android:textColor="#5cafcb" android:layout_marginLeft="2dp"
 	    android:textSize="16dp"
 	    ></TextView>
 	    <RelativeLayout android:id="@+id/home_footer_loc" android:onClick="locationClickHandler"
