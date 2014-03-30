@@ -1,7 +1,6 @@
 package co.uk.rehope.androidapp;
 
 import android.app.Activity;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +11,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import util.Typefaces;
+
 public class EventDetail extends Activity {
 
 	private String eventTitle = "";
@@ -20,12 +21,10 @@ public class EventDetail extends Activity {
 	private String eventCityURL = "";
 	private String eventDate = "";
 	private DrawableManager dm;
-	private Typeface tf;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.details);
-		tf = Typeface.createFromAsset(getAssets(), "fonts/ProximaNovaAlt-Reg.ttf");
 
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
@@ -39,11 +38,11 @@ public class EventDetail extends Activity {
 		setTitle("Re:Hope - " + eventTitle);
 
 		TextView title = (TextView) findViewById(R.id.detail_title);
-		title.setTypeface(tf);
+		title.setTypeface(Typefaces.get(this, "fonts/ProximaNovaAlt-Reg.ttf"));
 		title.setText(eventTitle);
 
 		TextView content = (TextView) findViewById(R.id.detail_content);
-		content.setTypeface(tf);
+		content.setTypeface(Typefaces.get(this, "fonts/ProximaNovaAlt-Reg.ttf"));
 		content.setText(eventContent);
 
 		SimpleDateFormat curFormater = new SimpleDateFormat("yyyy-MM-dd");
@@ -55,10 +54,10 @@ public class EventDetail extends Activity {
 			dateFormat = new SimpleDateFormat("dd");
 			String dayName = dateFormat.format(date);
 			TextView day = (TextView) findViewById(R.id.detail_day);
-			day.setTypeface(tf);
+			day.setTypeface(Typefaces.get(this, "fonts/ProximaNovaAlt-Reg.ttf"));
 			day.setText(dayName);
 			TextView month = (TextView) findViewById(R.id.detail_month);
-			month.setTypeface(tf);
+			month.setTypeface(Typefaces.get(this, "fonts/ProximaNovaAlt-Reg.ttf"));
 			month.setText(monthName);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

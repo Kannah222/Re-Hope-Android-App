@@ -1,25 +1,26 @@
 package co.uk.rehope.androidapp;
 
+import android.app.ListActivity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Vector;
 
-import android.app.ListActivity;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Typeface;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
+import util.Typefaces;
 
 public class Messages extends ListActivity {
 	private String[] messageImageURLs;
@@ -29,7 +30,6 @@ public class Messages extends ListActivity {
 	private String[] messageMp3URLs;
 	private messageListAdapter ela;
 	private DrawableManager dm;
-	private Typeface tf;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -159,17 +159,15 @@ public class Messages extends ListActivity {
 		TextView day = null;
 		TextView month = null;
 		ImageView image = null;
-		Typeface tf;
 
 		ViewWrapper(View base) {
 			this.base = base;
-			tf = Typeface.createFromAsset(getAssets(), "fonts/ProximaNovaAlt-Reg.ttf");
 		}
 
 		TextView getTitle() {
 			if (title == null) {
 				title = (TextView) base.findViewById(R.id.title);
-				title.setTypeface(tf);
+				title.setTypeface(Typefaces.get(Messages.this, "fonts/ProximaNovaAlt-Reg.ttf"));
 			}
 			return (title);
 		}
@@ -177,7 +175,7 @@ public class Messages extends ListActivity {
 		TextView getDay() {
 			if (day == null) {
 				day = (TextView) base.findViewById(R.id.day);
-				day.setTypeface(tf);
+				day.setTypeface(Typefaces.get(Messages.this, "fonts/ProximaNovaAlt-Reg.ttf"));
 			}
 			return (day);
 		}
@@ -185,7 +183,7 @@ public class Messages extends ListActivity {
 		TextView getMonth() {
 			if (month == null) {
 				month = (TextView) base.findViewById(R.id.month);
-				month.setTypeface(tf);
+				month.setTypeface(Typefaces.get(Messages.this, "fonts/ProximaNovaAlt-Reg.ttf"));
 			}
 			return (month);
 		}
