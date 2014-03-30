@@ -1,24 +1,25 @@
 package co.uk.rehope.androidapp;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Vector;
-
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Vector;
 
 public class Events extends ListActivity {
 	private String[] eventImageURLs;
@@ -79,13 +80,13 @@ public class Events extends ListActivity {
 								EventDetail.class);
 						intent.putExtra("eventTitle", eventTitles[position]);
 						intent
-								.putExtra("eventContent",
-										eventContents[position]);
+						.putExtra("eventContent",
+								eventContents[position]);
 						intent.putExtra("eventImageURL",
 								eventImageURLs[position]);
 						intent
-								.putExtra("eventCityURL",
-										eventCityURLs[position]);
+						.putExtra("eventCityURL",
+								eventCityURLs[position]);
 						intent.putExtra("eventDate", eventDates[position]);
 						rehope ParentActivity = (rehope) Events.this
 								.getParent();
@@ -157,21 +158,26 @@ public class Events extends ListActivity {
 		TextView day = null;
 		TextView month = null;
 		ImageView image = null;
+		Typeface tf;
 
 		ViewWrapper(View base) {
 			this.base = base;
+			tf = Typeface.createFromAsset(getAssets(), "fonts/ProximaNovaAlt-Reg.ttf");
 		}
 
 		TextView getTitle() {
 			if (title == null) {
 				title = (TextView) base.findViewById(R.id.title);
+				title.setTypeface(tf);
 			}
+
 			return (title);
 		}
 
 		TextView getDay() {
 			if (day == null) {
 				day = (TextView) base.findViewById(R.id.day);
+				day.setTypeface(tf);
 			}
 			return (day);
 		}
@@ -179,6 +185,7 @@ public class Events extends ListActivity {
 		TextView getMonth() {
 			if (month == null) {
 				month = (TextView) base.findViewById(R.id.month);
+				month.setTypeface(tf);
 			}
 			return (month);
 		}

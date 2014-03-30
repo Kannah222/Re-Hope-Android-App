@@ -34,3 +34,9 @@ config.properties
 gradle.properties
 
 *.keystore
+
+gen/co/uk/rehope/android/R.java
+
+.settings/org.eclipse.jdt.core.prefs
+
+gen/co/uk/rehope/android/R.java

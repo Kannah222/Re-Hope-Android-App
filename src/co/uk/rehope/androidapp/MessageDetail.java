@@ -6,6 +6,7 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -22,10 +23,13 @@ public class MessageDetail extends Activity {
 	private String messageMP3URL = "";
 	private String messageDate = "";
 	private DrawableManager dm;
+	private Typeface tf;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.details_message);
+		
+		tf = Typeface.createFromAsset(getAssets(), "fonts/ProximaNovaAlt-Reg.ttf");
 
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
@@ -39,9 +43,11 @@ public class MessageDetail extends Activity {
 		setTitle("Re:Hope - " + messageTitle);
 
 		TextView title = (TextView) findViewById(R.id.detail_title);
+		title.setTypeface(tf);
 		title.setText(messageTitle);
 
 		TextView content = (TextView) findViewById(R.id.detail_content);
+		content.setTypeface(tf);
 		content.setText(messageContent);
 
 		SimpleDateFormat curFormater = new SimpleDateFormat("yyyy-MM-dd");
@@ -53,8 +59,10 @@ public class MessageDetail extends Activity {
 			dateFormat = new SimpleDateFormat("dd");
 			String dayName = dateFormat.format(date);
 			TextView day = (TextView) findViewById(R.id.detail_day);
+			day.setTypeface(tf);
 			day.setText(dayName);
 			TextView month = (TextView) findViewById(R.id.detail_month);
+			month.setTypeface(tf);
 			month.setText(monthName);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

@@ -1,310 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
     android:id="@+id/main"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
     android:layout_marginLeft="10dp"
     android:layout_marginRight="10dp">
-
-    <ImageView
-        android:id="@+id/header"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+    <ImageView android:id="@+id/header" android:layout_width="fill_parent" android:layout_height="wrap_content"
         android:src="@drawable/home_header" />
-
-    <view
-        class="co.uk.rehope.androidapp.ReHopeGallery"
+    <view class="co.uk.rehope.androidapp.ReHopeGallery"
         android:id="@+id/gallery"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/header"
-        android:layout_marginTop="10dp" />
-
-    <RelativeLayout
-        android:id="@+id/events_large"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/home_events_bg_large"
-        android:visibility="invisible"
-        android:layout_below="@id/gallery"
+        android:layout_marginTop="10dp"
+        />
+    <RelativeLayout android:id="@+id/events_large" android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:background="@drawable/home_events_bg_large" android:visibility="invisible" android:layout_below="@id/gallery"
         android:layout_marginTop="16dp">
-
-        <ImageView
-            android:id="@+id/events_square_image"
-            android:layout_width="94dp"
-            android:layout_height="94dp"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/home_news_square" />
-
-        <ImageView
-            android:id="@+id/events_square_highlight"
-            android:layout_width="94dp"
-            android:layout_height="94dp"
-            android:src="@drawable/home_news_square_highlight"
-            android:layout_marginTop="6dp"
-            android:layout_marginLeft="10dp" />
-
-        <TextView
-            android:id="@+id/events_home_event_upcoming"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="113dp"
-            android:layout_marginTop="10dp"
-            android:textColor="#000000"
-            android:shadowColor="#000000"
-            android:textSize="12sp"
-            android:text="UPCOMING"
+        <ImageView android:id="@+id/events_square_image" android:layout_width="106dp" android:layout_height="106dp"
+            android:layout_marginTop="0dp" android:layout_marginLeft="0dp" android:src="@drawable/home_news_square" />
+        <ImageView android:id="@+id/upcoming" android:layout_width="68dip" android:layout_height="17dip"
+            android:src="@drawable/upcoming" android:layout_marginLeft="113dp"
+            android:layout_marginTop="10dp"/>
+        <TextView android:id="@+id/events_home_date_digits" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:layout_marginLeft="190dp"
+            android:layout_marginTop="6dp" android:textSize="18dp"
             android:textStyle="bold"
-            android:background="#0e717b"
-            android:padding="4dp"></TextView>
+            ></TextView>
+        <TextView android:id="@+id/events_home_date_month_name" android:layout_toRightOf="@id/events_home_date_digits" android:layout_alignBaseline="@id/events_home_date_digits"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="12dp"
 
-        <TextView
-            android:id="@+id/events_home_date_digits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:layout_marginLeft="190dp"
-            android:layout_marginTop="10dp"
-            android:shadowColor="#000000"
-            android:textSize="18dp"
-            android:shadowDx="0"
-            android:shadowDy="-2"
-            android:shadowRadius="2"
-            android:textStyle="bold"></TextView>
-
-        <TextView
-            android:id="@+id/events_home_date_month_name"
-            android:layout_toRightOf="@id/events_home_date_digits"
-            android:layout_alignBaseline="@id/events_home_date_digits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:shadowColor="#000000"
+            ></TextView>
+        <TextView android:id="@+id/events_home_event_title"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="113dp"
+            android:layout_marginTop="30dp" android:textColor="#000000"
+            android:textSize="16dp"
+            ></TextView>
+        <TextView android:id="@+id/events_home_event_content" android:layout_below="@id/events_home_event_title" android:layout_marginLeft="114dp"
+            android:layout_width="180dp" android:layout_height="wrap_content"
+            android:layout_marginTop="2dp" android:maxLines="3" android:ellipsize="end" android:textColor="#000000"
             android:textSize="12dp"
-            android:shadowDx="0"
-            android:shadowDy="-2"
-            android:shadowRadius="2"></TextView>
-
-        <TextView
-            android:id="@+id/events_home_event_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="113dp"
-            android:layout_marginTop="34dp"
-            android:textColor="#000000"
-            android:shadowColor="#000000"
-            android:textSize="16dp"></TextView>
-
-        <TextView
-            android:id="@+id/events_home_event_content"
-            android:layout_below="@id/events_home_event_title"
-            android:layout_marginLeft="114dp"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:maxLines="3"
-            android:ellipsize="end"
-            android:textColor="#DDDDDD"
-            android:shadowColor="#000000"
-            android:textSize="12dp"></TextView>
+            ></TextView>
     </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/events_small"
-        android:visibility="invisible"
-        android:layout_width="fill_parent"
-        android:layout_height="55dp"
-        android:background="@drawable/home_small_news_bg"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/events_large">
-
-        <ImageView
-            android:id="@+id/events_small_square_image"
-            android:layout_width="47dp"
-            android:layout_height="47dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="3dp"
-            android:src="@drawable/home_news_square" />
-
-        <ImageView
-            android:id="@+id/events_small_square_highlight"
-            android:layout_width="47dp"
-            android:layout_height="47dp"
-            android:src="@drawable/home_news_square_highlight"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="3dp" />
-
-        <TextView
-            android:id="@+id/events_home_small_date_digits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:layout_alignParentRight="true"
+    <RelativeLayout android:id="@+id/events_small" android:visibility="invisible"
+        android:layout_width="fill_parent" android:layout_height="55dp" android:background="@drawable/home_small_news_bg"
+        android:layout_marginTop="16dp" android:layout_below="@id/events_large">
+        <ImageView android:id="@+id/events_small_square_image" android:layout_width="55dp" android:layout_height="55dp"
+            android:layout_marginLeft="0dp" android:layout_marginTop="0dp" android:src="@drawable/home_news_square" />
+        <TextView android:id="@+id/events_home_small_date_digits" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textColor="#000000" android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="8dp"
-            android:shadowColor="#000000"
-            android:textSize="18dp"
-            android:shadowDx="0"
-            android:shadowDy="-2"
-            android:shadowRadius="2"
-            android:textStyle="bold"></TextView>
-
-        <TextView
-            android:id="@+id/events_home_small_date_month_name"
-            android:layout_below="@id/events_home_small_date_digits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:shadowColor="#000000"
-            android:textSize="12dp"
-            android:shadowDx="0"
-            android:shadowDy="-2"
-            android:shadowRadius="2"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="22dp"></TextView>
-
-        <TextView
-            android:id="@+id/events_home_small_event_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="64dp"
-            android:layout_marginTop="15dp"
-            android:textColor="#000000"
-            android:shadowColor="#000000"
-            android:textSize="16dp"></TextView>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/home_footer"
-        android:visibility="invisible"
-        android:layout_below="@id/events_small"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:background="@drawable/home_footer_bg"
-        android:layout_marginTop="16dp">
-
-        <TextView
-            android:id="@+id/home_footer_next_service"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="12dp"
-            android:text="The next service begins in:"
-            android:textColor="#000000"
-            android:shadowColor="#000000"
-            android:textSize="14dp"
-            android:layout_marginBottom="-4dp"></TextView>
-
-        <TextView
-            android:id="@+id/home_footer_hours_digit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="0dp"
-            android:layout_below="@id/home_footer_next_service"
-            android:text=""
-            android:textColor="#000000"
-            android:shadowColor="#000000"
+            android:layout_marginTop="8dp" android:textSize="18dp"
             android:textStyle="bold"
-            android:textSize="30dp"></TextView>
-
-        <TextView
-            android:id="@+id/home_footer_hours_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/home_footer_hours_digit"
-            android:layout_alignBaseline="@id/home_footer_hours_digit"
-            android:text="hrs"
-            android:textColor="#000000"
-            android:shadowColor="#000000"
-            android:layout_marginLeft="2dp"
-            android:textSize="16dp"></TextView>
-
-        <TextView
-            android:id="@+id/home_footer_minutes_digit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/home_footer_hours_label"
-            android:layout_alignBaseline="@id/home_footer_hours_label"
-            android:text=""
-            android:textColor="#000000"
-            android:shadowColor="#000000"
-            android:textSize="30dp"
-            android:layout_marginLeft="10dp"
-            android:textStyle="bold"></TextView>
-
-        <TextView
-            android:id="@+id/home_footer_minutes_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/home_footer_minutes_digit"
-            android:layout_alignBaseline="@id/home_footer_minutes_digit"
-            android:text="mins"
-            android:textColor="#000000"
-            android:shadowColor="#000000"
-            android:layout_marginLeft="2dp"
-            android:textSize="16dp"></TextView>
-
-        <TextView
-            android:id="@+id/home_footer_seconds_digit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/home_footer_minutes_label"
-            android:layout_alignBaseline="@id/home_footer_minutes_label"
-            android:text=""
-            android:textColor="#000000"
-            android:shadowColor="#000000"
-            android:textSize="30dp"
-            android:layout_marginLeft="10dp"
-            android:textStyle="bold"></TextView>
-
-        <TextView
-            android:id="@+id/home_footer_seconds_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/home_footer_seconds_digit"
-            android:layout_alignBaseline="@id/home_footer_seconds_digit"
-            android:text="secs"
-            android:textColor="#000000"
-            android:shadowColor="#000000"
-            android:layout_marginLeft="2dp"
-            android:textSize="16dp"></TextView>
-
-        <RelativeLayout
-            android:id="@+id/home_footer_loc"
-            android:onClick="locationClickHandler"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="70dp">
-
-            <ImageView
-                android:id="@+id/home_footer_loc_pin"
-                android:layout_width="11dp"
-                android:layout_height="17dp"
+            ></TextView>
+        <TextView android:id="@+id/events_home_small_date_month_name" android:layout_below="@id/events_home_small_date_digits"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="#000000" android:textSize="11dp"
+            android:layout_alignParentRight="true" android:layout_marginRight="19dp" android:layout_marginTop="-5dp"
+            ></TextView>
+        <TextView android:id="@+id/events_home_small_event_title"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="64dp"
+            android:layout_marginTop="15dp" android:textColor="#000000"
+            android:textSize="16dp"
+            ></TextView>
+    </RelativeLayout>
+    <RelativeLayout android:id="@+id/home_footer" android:visibility="invisible" android:layout_below="@id/events_small"
+        android:layout_width="fill_parent" android:layout_height="fill_parent" android:background="@drawable/home_footer_bg"
+        android:layout_marginTop="16dp">
+        <TextView android:id="@+id/home_footer_next_service"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="49dp"
+            android:layout_marginTop="12dp"
+            android:text="JOIN US AT OUR NEXT SERVICE" android:textColor="#000000"
+            android:textSize="14dp" android:layout_marginBottom="-4dp"
+            ></TextView>
+        <TextView android:id="@+id/home_footer_hours_digit"
+            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="66dp"
+            android:layout_marginTop="0dp" android:layout_below="@id/home_footer_next_service"
+            android:text="" android:textColor="#5cafcb" android:textStyle="bold"
+            android:textSize="16dp"
+            ></TextView>
+        <TextView android:id="@+id/home_footer_hours_label"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_hours_digit" android:layout_alignBaseline="@id/home_footer_hours_digit"
+            android:text="hrs" android:textColor="#5cafcb" android:layout_marginLeft="2dp"
+            android:textSize="16dp"
+            ></TextView>
+        <TextView android:id="@+id/home_footer_minutes_digit"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_hours_label" android:layout_alignBaseline="@id/home_footer_hours_label"
+            android:text="" android:textColor="#5cafcb"
+            android:textSize="16dp" android:layout_marginLeft="10dp" android:textStyle="bold"
+            ></TextView>
+        <TextView android:id="@+id/home_footer_minutes_label"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_minutes_digit" android:layout_alignBaseline="@id/home_footer_minutes_digit"
+            android:text="mins" android:textColor="#5cafcb" android:layout_marginLeft="2dp"
+            android:textSize="16dp"
+            ></TextView>
+        <TextView android:id="@+id/home_footer_seconds_digit"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_minutes_label" android:layout_alignBaseline="@id/home_footer_minutes_label"
+            android:text="" android:textColor="#5cafcb"
+            android:textSize="16dp" android:layout_marginLeft="10dp" android:textStyle="bold"
+            ></TextView>
+        <TextView android:id="@+id/home_footer_seconds_label"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_seconds_digit" android:layout_alignBaseline="@id/home_footer_seconds_digit"
+            android:text="secs" android:textColor="#5cafcb" android:layout_marginLeft="2dp"
+            android:textSize="16dp"
+            ></TextView>
+        <RelativeLayout android:id="@+id/home_footer_loc" android:onClick="locationClickHandler"
+            android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp" android:layout_marginTop="70dp">
+            <ImageView android:id="@+id/home_footer_loc_pin" android:layout_width="11dp" android:layout_height="17dp"
                 android:src="@drawable/pin" />
-
-            <TextView
-                android:id="@+id/home_footer_loc_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/home_footer_loc_pin"
-                android:text="Loading..."
-                android:textColor="#000000"
-                android:shadowColor="#000000"
-                android:layout_marginLeft="8dp"
-                android:textSize="16dp"></TextView>
+            <TextView android:id="@+id/home_footer_loc_label"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"  android:layout_toRightOf="@id/home_footer_loc_pin" android:layout_alignBaseline="@id/home_footer_seconds_digit"
+                android:text="Loading..." android:textColor="#000000" android:layout_marginLeft="8dp"
+                android:textSize="16dp"
+                ></TextView>
         </RelativeLayout>
     </RelativeLayout>
-
-    <ProgressBar
-        android:id="@+id/progress"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+    <ProgressBar android:id="@+id/progress" android:layout_width="60dp" android:layout_height="60dp"
         android:indeterminateOnly="true"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="180dp"
-        android:visibility="invisible" />
+        android:layout_marginLeft="130dp" android:layout_marginTop="180dp" android:visibility="invisible"
+        />
 </RelativeLayout>
